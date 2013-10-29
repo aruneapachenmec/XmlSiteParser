@@ -4,7 +4,7 @@ require 'uri'
 require 'mysql2'
 
 =begin
-	Setting up connection to local host by using mysql2 .
+	Setting up connection to local host by using mysql2 gem .
 =end
 
 $client = Mysql2::Client.new(:host => "localhost", :username => "root", :password => "qburst", :database => "webSpider")

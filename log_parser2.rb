@@ -1,21 +1,21 @@
 =begin
-	The class LogParser will parse a log file and provides number of requests made grouped
-	by date and time and also finds the url which took the maximum time for request.
-	Methods : file_check (generates the grouped request , the maximum time taken by url)
-						number_request (outputs the grouped request)
-						max_time_url (outputs the url which takes the maximum time)
+  The class LogParser will parse a log file and provides number of requests made grouped
+  by date and time and also finds the url which took the maximum time for request.
+  Methods : file_check (generates the grouped request , the maximum time taken by url)
+  number_request (outputs the grouped request)
+  max_time_url (outputs the url which takes the maximum time)
 =end
 
 class LogParser
 
 =begin	
-	Initializes a string @file and a hash variable and fixnum variable @max (to save max time taken)
-	input : path (provides the path of the log file)
-	output : nil		
+  Initializes a string @file and a hash variable and fixnum variable @max (to save max time taken)
+  input : path (provides the path of the log file)
+  output : nil		
 =end
 
-	def initialize(path)	
-		@file = File.read(path)
+  def initialize(path)	
+    @file = File.read(path)
 		@hash = Hash.new(0)
 		@max = 0
 		@max1 = 0
@@ -35,13 +35,13 @@ class LogParser
 				@hash[match_true[0]] += 1
 			end
 			#finding the max request time. 
-			 time = /\d+$/.match(line)
-			 if time
+			time = /\d+$/.match(line)
+			if time
 			 	temp = time[0].to_i	
 				if (temp) > @max
 			 		@max = temp
 			 	end
-			 end	 
+			end	 
 		end
 		self
 	end
@@ -65,7 +65,7 @@ class LogParser
 				
 			puts "#{val1}:#{val2} #{req}"
 			puts "\n"
-
+			#finding the maximum time in a given time group
 			@file.each_line do |line|
 				if line.include? $x
 				  time = /\d+$/.match(line)

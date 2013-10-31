@@ -16,9 +16,9 @@ class LogParser
 
   def initialize(path)	
     @file = File.read(path)
-		@hash = Hash.new(0)
-		@max = 0
-		@max1 = 0
+    @hash = Hash.new(0)
+    @max = 0
+@max1 = 0
 	end	
 
 =begin

@@ -4,7 +4,7 @@ require 'uri'
 require 'mysql2'
 
 =begin
-	Setting up connection to local host by using mysql2 gem.
+	Setting up connection to local host by using mysql2 gem .
 =end
 
 $client = Mysql2::Client.new(:host => "localhost", :username => "root", :password => "qburst", :database => "webSpider")
@@ -25,7 +25,7 @@ x = doc.xpath('//div[@class="cont"]//div[@class="c"]//em//a')
 x.each do |cat|
 
 =begin	
-Checking whether the category is "Action" in order to remove redundant data 
+Checking whether the catgory is "Action" in order to remove redundant data 
 from being stored to database.	
 =end
 
